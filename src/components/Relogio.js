@@ -19,7 +19,9 @@ export default class Relogio extends React.Component {
 
     render(){
         return(
-            <>
+            <div className="relogio">
+
+            <h2>Tempo:</h2>
             <h4>
                 Data: {this.state.hora.toLocaleDateString()}
             </h4>
@@ -28,7 +30,7 @@ export default class Relogio extends React.Component {
                 Hora: {this.state.hora.toLocaleTimeString()}
             </h4>
 
-            </>
+            </div>
             
         )
     }

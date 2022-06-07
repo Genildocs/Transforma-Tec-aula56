@@ -7,17 +7,17 @@ function Cor(props){
     
 
     return (
-        <div>
-            <h3>
+        <>
+            <h3 className="cor">
                 Minha cor favorita é: {cor}.
             </h3>
 
-            <button onClick={
+            <button className="botao" onClick={
                 ()=> setCor(props.cor) // useState seta um valor para uma variavel e renderiza esse valor atualizado.
             }>
                 Alterar Cor
             </button>
-        </div>
+        </>
 
     )
 }
