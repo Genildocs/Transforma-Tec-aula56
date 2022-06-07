@@ -18,8 +18,26 @@ export default class Carro extends React.Component {
     }
 
     acelerar(){
-        let velo = this.state.velocidade + 15
+        let velo = this.state.velocidade + 10
         this.setState({velocidade: velo})
+
+        if (this.state.velocidade == 190){
+            this.setState({explodiu: true})
+        } 
+    }
+
+    frear(){
+        let velo = this.state.velocidade - 15
+        this.setState({velocidade: velo})
+
+        if (this.state.velocidade < 0){
+            this.setState({velocidade: 0})
+        }
+    
+    }
+
+    parar(){
+        this.setState({velocidade: 0})
     }
 
     render() {
@@ -48,6 +66,16 @@ export default class Carro extends React.Component {
             <button onClick=
             {() => this.acelerar()}>
                 Acelerar
+            </button>
+
+            <button onClick=
+            {() => this.frear()}>
+                Frear
+            </button>
+
+            <button onClick=
+            {() => this.parar()}>
+                Parar
             </button>
         </>  
         )
